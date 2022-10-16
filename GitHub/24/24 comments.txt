@@ -1,0 +1,18 @@
+.model small
+.data
+b db 2 ;(b)
+d db 4 ;(d)
+c db 6 ;(c)
+
+.code
+Start:
+mov al, [b]
+mov bl, 4
+mul bl ; al * bl = [a] * 4 = 2 * 4 = 8
+div [d]
+mov cl, 24
+mov dl, [c]
+mul dl ; 24 * dl = 24 * [c] = 24 * 6 = 144
+add [d], dl
+
+end start

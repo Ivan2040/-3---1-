@@ -1,0 +1,21 @@
+.model small
+.data
+a db 2 ;(a)
+b db 1 ;(b)
+c db 5 ;(c)
+e db 4 ;(e)
+
+.code
+Start:
+mov al, [a]
+mov bl, [b]
+mul bl ; al * bl = 8 * [b] = 8 * 1 = 8
+div [e] ; e / 8b = e / 8 * 1
+mov cl, 25
+mov dl, [a]
+mul dl ; cl * dl = 25a = 25 * 2 = 50
+mov al, [c] ; [c] = 5
+mul [c] ; [c] * dl = 5 * 50 = 250
+add [c],[e]
+
+end start

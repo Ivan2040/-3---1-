@@ -1,0 +1,18 @@
+.model small
+.data
+b db 5 ;(b)
+e db 3 ;(e)
+c db 2  ;(c)
+
+.code
+start:
+mov al, [b]
+mov bl, 2
+mul bl ; al * bl = a * b = 2 * 5 = 10
+mov cl, 22
+mov dl, [c]
+mul dl
+div [e]
+sub bl, [e]
+
+end start

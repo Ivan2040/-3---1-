@@ -1,0 +1,21 @@
+.model small
+.data
+a db 4 
+b db 1 
+c db 2 
+
+.stack 100h
+.code
+start:
+mov al, 4
+mov bl, [a]
+mul bl 
+mov cl, [c]
+mul cl 
+mov al, 28
+mul dl 
+mov bl, [b]
+div dl 
+sub bl, dl
+
+end start

@@ -1,0 +1,24 @@
+.model small
+.data
+a db 3 ;(a)
+b db 2 ;(b)
+c db 5 ;(c)
+
+.code
+Start:
+
+mov al, [a]
+mov bl, [b]
+mul bl ; al * bl = a * b = 3 * 2 = 6
+mov cl, 3
+mov dl, [a]
+mul dl
+div dl ; dl / bl = 3 / 9 = 0,33
+mov al, 23
+mov bl, [c]
+mul bl ; al * bl = 23 * [c] = 23 * 5 = 115
+sub dl, bl
+sub bl, [b]
+
+
+end start

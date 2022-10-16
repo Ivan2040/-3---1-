@@ -1,0 +1,23 @@
+.model small
+.data
+a db 1 ; (a)
+d db 3 ; (d)
+c db 4 ; (c)
+
+.stack 100h
+
+.code
+start:
+mov al, 4
+mov bl, [d]
+mul bl ; al * bl = 4 * [d] = 4 * 3 = 12
+mov cl, [a]
+mul cl ; al * cl
+div cl ; bl / cl = 12 / 4 = 3
+mov al, 26
+mov dl, [c]
+mul dl ; 26 * [c] = 26 * 4
+mul bl ; 26 * 4 * d
+sub bl, dl
+
+end start
